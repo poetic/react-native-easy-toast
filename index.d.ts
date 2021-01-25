@@ -5,7 +5,7 @@ declare module "react-native-easy-toast" {
     LENGTH_SHORT: number;
     FOREVER: number;
   }
-  export default class Toast extends Component {
+  export default class Toast extends Component<{ pointEvents?: string }> {
     show: (
       text: string | ReactNode,
       duration?: number,
