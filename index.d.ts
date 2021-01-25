@@ -9,12 +9,13 @@
 import { Component, ReactNode } from "react";
 
 interface ToastComponentProps {
-  position?: "bottom" | "center" | "top";
-  textStyle?: {};
-  positionValue?: number;
   fadeInDuration?: number;
   fadeOutDuration?: number;
   opacity?: number;
+  pointerEvents?: 'auto' | 'box-none' | 'none';
+  position?: "bottom" | "center" | "top";
+  positionValue?: number;
+  textStyle?: {};
 }
 
 declare module "react-native-easy-toast" {

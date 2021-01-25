@@ -113,7 +113,7 @@ export default class Toast extends Component {
         <TouchableWithoutFeedback onPress={this.onPress} >
             <View
                 style={[styles.container, { top: pos }]}
-                pointerEvents="auto"
+                pointerEvents={this.props.pointerEvents}
             >
                 <Animated.View
                     style={[styles.content, { opacity: this.state.opacityValue }, this.props.style]}
@@ -147,26 +147,29 @@ const styles = StyleSheet.create({
 });
 
 Toast.propTypes = {
-    style: ViewPropTypes.style,
+    fadeInDuration:PropTypes.number,
+    fadeOutDuration:PropTypes.number,
+    opacity:PropTypes.number,
+    pointerEvents: PropTypes.string,
     position: PropTypes.oneOf([
         'top',
         'center',
         'bottom',
     ]),
-    textStyle: Text.propTypes.style,
     positionValue:PropTypes.number,
-    fadeInDuration:PropTypes.number,
-    fadeOutDuration:PropTypes.number,
-    opacity:PropTypes.number,
-    useNativeAnimation:PropTypes.bool
+
+    style: ViewPropTypes.style,
+    textStyle: Text.propTypes.style,
+    useNativeAnimation:PropTypes.bool,
 }
 
 Toast.defaultProps = {
-    position: 'bottom',
-    textStyle: styles.text,
-    positionValue: 120,
     fadeInDuration: 500,
     fadeOutDuration: 500,
     opacity: 1,
-    useNativeAnimation: false
+    pointerEvents: 'none',
+    position: 'bottom',
+    positionValue: 120,
+    textStyle: styles.text,
+    useNativeAnimation: false,
 }
