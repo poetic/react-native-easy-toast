@@ -8,6 +8,7 @@ interface ToastComponentProps {
   position?: "bottom" | "center" | "top";
   positionValue?: number;
   textStyle?: {};
+  style?: {};
 }
 
 declare module "react-native-easy-toast" {
